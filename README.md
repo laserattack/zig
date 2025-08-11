@@ -47,30 +47,31 @@ serr@home:~/Рабочий стол/zig$ ./zig env
 }
 ```
 
-Скопировал всю папку в `/usr/local`
+Скопировал всю папку в `/usr/local/bin`
 
 ```
-serr@home:~/Рабочий стол$ sudo cp -r zig/ /usr/local/
+serr@home:~/Рабочий стол$ sudo cp -r zig/ /usr/local/bin/
 [sudo] пароль для serr:         
-serr@home:~/Рабочий стол$ ls /usr/local/
-bin  etc  games  include  lib  man  sbin  share  src  zig
+serr@home:~$ ls /usr/local/bin
+apt         highlight-mint  luajit-2.1.1753364724  luarocks-admin  sp.lua  zig
+gnome-help  luajit          luarocks               search          yelp
 ```
 
 и создал алиас в `~/.bashrc`
 
 ```
-alias zig="/usr/local/zig/zig"
+alias zig="/usr/local/bin/zig/zig"
 ```
 
 Теперь zig можно запускать из любого места
 
 ```
-serr@home:~$ zig env
+serr@home:~/projects/zig-knowledge-base$ zig env
 .{
-    .zig_exe = "/usr/local/zig/zig",
-    .lib_dir = "/usr/local/zig/lib",
-    .std_dir = "/usr/local/zig/lib/std",
-    .global_cache_dir = ".cache/zig",
+    .zig_exe = "/usr/local/bin/zig/zig",
+    .lib_dir = "/usr/local/bin/zig/lib",
+    .std_dir = "/usr/local/bin/zig/lib/std",
+    .global_cache_dir = "/home/serr/.cache/zig",
     .version = "0.15.0-dev.1380+e98aeeb73",
     .target = "x86_64-linux.6.8...6.8-gnu.2.39",
     .env = .{
