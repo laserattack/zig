@@ -10,6 +10,8 @@ git clone --recurse-submodules https://github.com/laserattack/zig-knowledge-base
 
 ## Установка Zig
 
+*Релизы Zig — это автономные архивы, которые можно разместить в любом месте вашей системы и сразу пользоваться Zig*
+
 Скачал архив под свою систему тут [ziglang.org/ru-RU/download/](https://ziglang.org/ru-RU/download/), распаковал в папку на рабочем столе
 
 ```
