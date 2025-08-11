@@ -105,6 +105,8 @@ serr@home:~/projects/zig-knowledge-base$ zig env
 
 ## Куда Zig мусорит?
 
+Кроме этой папки Zig никуда не мусорит
+
 ```
 serr@home:~$ ls /home/serr/.cache/zig
 b  h  o  tmp  z
