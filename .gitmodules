@@ -1,0 +1,3 @@
+[submodule "learning-zig-rus"]
+	path = learning-zig-rus
+	url = https://github.com/dee0xeed/learning-zig-rus
