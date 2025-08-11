@@ -103,14 +103,14 @@ serr@home:~/projects/zig-knowledge-base$ zig env
 
 В VSCode есть официальное расширение `Zig Language` от [ziglang.org](https://ziglang.org), в его настройках убрал абсолютно все галочки, а в `Zig: Path` вписал путь к исполняемому файлу компилятора (у меня `/usr/local/bin/zig/zig`)
 
-## Кэш Zig
+## Куда Zig мусорит?
 
 ```
 serr@home:~$ ls /home/serr/.cache/zig
 b  h  o  tmp  z
 ```
 
-*Куда Zig мусорит?*
+*Инфа из DeepSeek:*
 
 | Папка     | Описание                                                                              |
 | --------- | ------------------------------------------------------------------------------------- |
