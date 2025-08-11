@@ -1,7 +1,93 @@
 # Моя база знаний ЯП Zig
 
+## Работа с репозиторием
+
 Клонирование через 
 
 ```
 git clone --recurse-submodules https://github.com/laserattack/zig-knowledge-base
+```
+
+## Установка Zig
+
+Скачал архив под свою систему тут [ziglang.org/ru-RU/download/](https://ziglang.org/ru-RU/download/), распаковал в папку на рабочем столе
+
+```
+serr@home:~/Рабочий стол/zig$ ls
+doc  lib  LICENSE  README.md  zig
+```
+
+Проверка работоспособности
+
+```
+serr@home:~/Рабочий стол/zig$ ./zig env
+.{
+    .zig_exe = "/home/serr/\xd0\xa0\xd0\xb0\xd0\xb1\xd0\xbe\xd1\x87\xd0\xb8\xd0\xb9 \xd1\x81\xd1\x82\xd0\xbe\xd0\xbb/zig/zig",
+    .lib_dir = "lib",
+    .std_dir = "lib/std",
+    .global_cache_dir = "/home/serr/.cache/zig",
+    .version = "0.15.0-dev.1380+e98aeeb73",
+    .target = "x86_64-linux.6.8...6.8-gnu.2.39",
+    .env = .{
+        .ZIG_GLOBAL_CACHE_DIR = null,
+        .ZIG_LOCAL_CACHE_DIR = null,
+        .ZIG_LIB_DIR = null,
+        .ZIG_LIBC = null,
+        .ZIG_BUILD_RUNNER = null,
+        .ZIG_VERBOSE_LINK = null,
+        .ZIG_VERBOSE_CC = null,
+        .ZIG_BTRFS_WORKAROUND = null,
+        .ZIG_DEBUG_CMD = null,
+        .CC = null,
+        .NO_COLOR = null,
+        .CLICOLOR_FORCE = null,
+        .XDG_CACHE_HOME = null,
+        .HOME = "/home/serr",
+    },
+}
+```
+
+Скопировал всю папку в `/usr/local`
+
+```
+serr@home:~/Рабочий стол$ sudo cp -r zig/ /usr/local/
+[sudo] пароль для serr:         
+serr@home:~/Рабочий стол$ ls /usr/local/
+bin  etc  games  include  lib  man  sbin  share  src  zig
+```
+
+и создал алиас в `~/.bashrc`
+
+```
+alias zig="/usr/local/zig/zig"
+```
+
+Теперь zig можно запускать из любого места
+
+```
+serr@home:~$ zig env
+.{
+    .zig_exe = "/usr/local/zig/zig",
+    .lib_dir = "/usr/local/zig/lib",
+    .std_dir = "/usr/local/zig/lib/std",
+    .global_cache_dir = ".cache/zig",
+    .version = "0.15.0-dev.1380+e98aeeb73",
+    .target = "x86_64-linux.6.8...6.8-gnu.2.39",
+    .env = .{
+        .ZIG_GLOBAL_CACHE_DIR = null,
+        .ZIG_LOCAL_CACHE_DIR = null,
+        .ZIG_LIB_DIR = null,
+        .ZIG_LIBC = null,
+        .ZIG_BUILD_RUNNER = null,
+        .ZIG_VERBOSE_LINK = null,
+        .ZIG_VERBOSE_CC = null,
+        .ZIG_BTRFS_WORKAROUND = null,
+        .ZIG_DEBUG_CMD = null,
+        .CC = null,
+        .NO_COLOR = null,
+        .CLICOLOR_FORCE = null,
+        .XDG_CACHE_HOME = null,
+        .HOME = "/home/serr",
+    },
+}
 ```
