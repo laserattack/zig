@@ -129,3 +129,4 @@ b  h  o  tmp  z
 - Оф. сайт языка - [ziglang.org](https://ziglang.org/)
 - Документация языка - [ziglang.org/documentation/master](https://ziglang.org/documentation/master/)
 - Какой то сайтик с гайдами - [zig.guide](https://zig.guide/)
+- Куча ссылок на всякие community ТГ чатики, дискорд сервера - [github.com/ziglang/zig/wiki/Community](https://github.com/ziglang/zig/wiki/Community)
