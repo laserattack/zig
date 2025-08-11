@@ -130,3 +130,4 @@ b  h  o  tmp  z
 - Документация языка - [ziglang.org/documentation/master](https://ziglang.org/documentation/master/)
 - Какой то сайтик с гайдами - [zig.guide](https://zig.guide/)
 - Куча ссылок на всякие community ТГ чатики, дискорд сервера - [github.com/ziglang/zig/wiki/Community](https://github.com/ziglang/zig/wiki/Community)
+- Перевод книги Карла Сегена "Учим Zig" на русский язык - [github.com/dee0xeed/learning-zig-rus](https://github.com/dee0xeed/learning-zig-rus)
