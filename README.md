@@ -94,3 +94,7 @@ serr@home:~/projects/zig-knowledge-base$ zig env
     },
 }
 ```
+
+## Language Server
+
+В VSCode есть официальное расширение `Zig Language` от [ziglang.org](https://ziglang.org), в его настройках убрал абсолютно все галочки, а в `Zig: Path` вписал путь к исполняемому файлу компилятора (у меня `/usr/local/bin/zig/zig`)
