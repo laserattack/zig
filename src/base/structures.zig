@@ -16,7 +16,11 @@ pub const User = struct {
         };
     }
     fn say(self: User, allocator: std.mem.Allocator) ![]const u8 {
-        return std.fmt.allocPrint(allocator, "i am {s}, my power: {d}", .{ self.name, self.power });
+        return std.fmt.allocPrint(
+            allocator,
+            "i am {s}, my power: {d}",
+            .{ self.name, self.power },
+        );
     }
 };
 
