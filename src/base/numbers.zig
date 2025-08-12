@@ -1,6 +1,7 @@
-const std = @import("std");
+const expect = @import("std").testing.expect;
 
-pub fn main() void {
+test "big number" {
     const a: u1337 = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF * 10;
-    std.debug.print("{}\n{}\n", .{ a, a - 1 });
+    try expect(a == 1157920892373161954235709850086879078532699846656405640394575840079131296399350);
+    try expect(a - 1 == 1157920892373161954235709850086879078532699846656405640394575840079131296399349);
 }

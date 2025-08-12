@@ -7,11 +7,11 @@ test "pointer var" {
 }
 
 test "pointer arithmetic array" {
-    const array = [_]i32{ 1, 2, 3 };
+    const array = [_]i32{ 1, 2, 5 };
 
     // Coerce to many-item pointer
     var ptr: [*]const i32 = &array;
     try expect(ptr[0] == 1);
     ptr += 2;
-    try expect(ptr[0] == 3);
+    try expect(ptr[0] == 5);
 }
