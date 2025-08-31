@@ -71,9 +71,21 @@ fn ex_slice2() void {
     print("slice.len = {}\n", .{slice.len});
 }
 
+fn ex_slice3() void {
+    print("\nEX_SLICE_3\n", .{});
+    var arr = [_]i32{1,2,3,4,5};
+    var end: usize = 3; end += 1; // значение end известно только в runtime
+    
+    const slice = arr[0..end];
+    print("slice type = {s}\n", .{@typeName(@TypeOf(slice))});
+    print("slice.ptr = 0x{x}\n", .{@intFromPtr(slice.ptr)});
+    print("slice.len = {}\n", .{slice.len});
+}
+
 pub fn main() void {
     ex_arr();
     ex_arr_ptr();
     ex_slice1();
     ex_slice2();
+    ex_slice3();
 }
