@@ -77,6 +77,14 @@ fn ex_slice3() void {
     var end: usize = 3; end += 1; // значение end известно только в runtime
     
     const slice = arr[0..end];
+
+    // Сахар для slice.ptr[2] но с проверкой границ!
+    // если просто slice.ptr[2], то проверки границ не будет!
+    slice[2] = 2003;
+
+    // slice.ptr[6] += 1; // ub, программа, скорее всего, не упадет
+    // slice[6] += 1; // программа упадет (thread 24030 panic: index out of bounds)
+
     print("slice type = {s}\n", .{@typeName(@TypeOf(slice))});
     print("slice.ptr = 0x{x}\n", .{@intFromPtr(slice.ptr)});
     print("slice.len = {}\n", .{slice.len});
