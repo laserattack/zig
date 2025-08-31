@@ -7,7 +7,7 @@ pub fn main() void {
    
     // Zig разрешает арифметику для [*]T (many pointers), но запрещает для *T (single pointers)
 
-    // Первый вариант
+    // Первый вариант (более идиоматичный и читаемый)
     {
         var arr_ptr: [*]const u8 = &arr;
         print("{}\n", .{arr_ptr[0]}); // 1
