@@ -62,6 +62,7 @@ fn ex_slice1() void {
 fn ex_slice2() void {
     print("\nEX_SLICE_2\n", .{});
     const slice: []const i32 = &.{1,2,3,4,5};
+    slice[2];
     print("slice type = {s}\n", .{@typeName(@TypeOf(slice))});
     print("slice.ptr = 0x{x}\n", .{@intFromPtr(slice.ptr)});
     print("slice.len = {}\n", .{slice.len});
