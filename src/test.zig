@@ -48,6 +48,8 @@ fn ex_arr_ptr() void {
 // Слайс - это указатель и длина. Разница между массивом и фрагментом
 // заключается в том, что длина массива является частью типа и известна 
 // во время компиляции, тогда как длина фрагмента известна во время выполнения.
+//
+// Слайс - структура с двумя полями - указатель на массив и длина массива
 fn ex_slice1() void {
     print("\nEX_SLICE_1\n", .{});
     const arr = [_]i32{1,2,3,4,5};
@@ -62,8 +64,9 @@ fn ex_slice1() void {
 fn ex_slice2() void {
     print("\nEX_SLICE_2\n", .{});
     const slice: []const i32 = &.{1,2,3,4,5};
-    slice[2];
     print("slice type = {s}\n", .{@typeName(@TypeOf(slice))});
+    // тут будет [*]const i32 - указатель на неизвестное кол-во элементов
+    print("slice.ptr type = {s}\n", .{@typeName(@TypeOf(slice.ptr))});
     print("slice.ptr = 0x{x}\n", .{@intFromPtr(slice.ptr)});
     print("slice.len = {}\n", .{slice.len});
 }
