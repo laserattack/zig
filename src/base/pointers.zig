@@ -1,17 +1,22 @@
-const expect = @import("std").testing.expect;
+const std = @import("std");
+const print = std.debug.print; 
 
-test "pointer var" {
-    const a: i32 = 42;
-    const ptr = &a;
-    try expect(ptr.* == 42);
-}
+pub fn main() void {
+    const arr = [_]u8{1,2,3,4,5}; 
+    print("arr type = {s}\n", .{@typeName(@TypeOf(arr))});
+   
+    // Zig разрешает арифметику для [*]T (many pointers), но запрещает для *T (single pointers)
 
-test "pointer arithmetic array" {
-    const array = [_]i32{ 1, 2, 5 };
-
-    // Coerce to many-item pointer
-    var ptr: [*]const i32 = &array;
-    try expect(ptr[0] == 1);
-    ptr += 2;
-    try expect(ptr[0] == 5);
+    // Первый вариант
+    {
+        var arr_ptr: [*]const u8 = &arr;
+        print("{}\n", .{arr_ptr[0]}); // 1
+        arr_ptr += 1;
+        print("{}\n", .{arr_ptr[0]}); // 2
+    }
+    // Второй вариант
+    {
+        print("{}\n", .{@as(*const u8, @ptrFromInt(@intFromPtr(&arr) + 0)).*}); // 1
+        print("{}\n", .{@as(*const u8, @ptrFromInt(@intFromPtr(&arr) + 1)).*}); // 2
+    }
 }
