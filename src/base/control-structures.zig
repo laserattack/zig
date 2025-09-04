@@ -107,5 +107,22 @@ pub fn main() void {
             } else null; 
         print("{any}\n", .{index}); // 4
         print("{s}\n", .{@typeName(@TypeOf(index))}); // ?usize (либо usize либо null)
+    
+        // WHILE
+        var i: u8 = 5;
+        while (i <= 20) {
+            print("{} ", .{i}); // 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+            i += 1;
+        }
+        print("\n", .{});
+
+        // можно также использовать дополнительный блок кода `: ()`
+        // называемый `continue expression`, он выполняется после каждой итерации
+        // включая итерацию с continue
+        i = 5;
+        while (i <= 20) : (i += 1) {
+            print("{} ", .{i}); // 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+        }
+        print("\n", .{});
     }
 }
